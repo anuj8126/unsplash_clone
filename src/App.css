@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.imageContainer {
+  columns: 3;
+  column-gap: 5px;
+  width: 80%;
+  margin: 2px auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.imageContainer img {
+  width: 100%;
+  padding: 5px;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.banner {
+  height: 600px;
+  background: url('./assets/banner.jpeg') no-repeat right top;
+  background-size: 100% 770px;
+  width: 100%;
+  position: relative;
+}
+
+.banner-container {
+  max-width: 60%;
+  margin: auto;
+}
+
+.banner-content {
+  height: 600px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.banner-content h1 {
+  font-size: 3rem;
+  color: #fff;
+  z-index: 2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.banner-content p {
+  color: #fff;
+  z-index: 2;
+  margin: 1rem 0;
+  line-height: 1.5;
+}
+
+.banner-search {
+  z-index: 2;
+  margin: 1rem 0.6rem 0 0;
+}
+
+.banner-search input {
+  width: 100%;
+  padding: 1.2rem;
+  border-radius: 5px;
+  border: none;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+.search_button {
+  transition: all .5s ease;
+  color: #fff;
+  border: 3px solid white;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  font-size: 17px;
+  background-color: transparent;
+  padding: 10px;
+  outline: none;
+  border-radius: 4px;
+  margin: 10px 0px 10px;
+}
+
+.search_button:hover {
+  color: #001F3F;
+  background-color: #fff;
+}
+
+@media(max-width:900px) {
+
+  .banner {
+    background-size: 200% 700px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .banner-container {
+    max-width: 90%;
+  }
+
+  .imageContainer {
+    columns: 1;
   }
 }
