@@ -16,11 +16,17 @@ function LoadImages(pagecount) {
 
 function SearchImages(query, pagecount) {
     const [searchimageData, setsearchimageData] = useState([]);
+   
     useEffect(() => {
+        console.log("query1",query);
+        //  if(query == ''){
+        //     console.log("query",query);
+        // setsearchimageData([]);
+        //  }
         axios
             .get(`https://api.unsplash.com/search/photos?query=${query}&client_id=tcFmvGK3-Z2KJWbsfXDGpqFN_vd4oC__LoPaksDJCZg&page=${pagecount}`)
             .then((data) => {
-                setsearchimageData([...searchimageData, ...data.data.results]);
+                setsearchimageData([searchimageData, ...data.data.results]);
             })
     }, [query, pagecount])
 

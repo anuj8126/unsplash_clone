@@ -7,6 +7,7 @@ export function App() {
   const [searchquery, setsearchquery] = useState("");
   const [search, setSearch] = useState("");
   const [pagecount, setpagecount] = useState(1);
+  const [loader,setloder] = useState(false);
 
   const handleSearch = () => {
     setSearch(searchquery);
